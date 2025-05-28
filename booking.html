@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Page</title>
+  <style>
+    body {
+      background-color: #121212;
+      color: white;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .movie-detail {
+      text-align: left;
+    }
+    .movie-detail img {
+      max-width: 300px;
+      border-radius: 10px;
+    }
+    h1 {
+      color: #f5c518;
+    }
+  </style>
+</head>
+<body>
+  <div class="movie-detail">
+ 
+
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const movieTitle = params.get("movie");
+
+    const movie = movies.find(m => m.title === movieTitle);
+
+    if (movie) {
+      document.getElementById("movieTitle").textContent = movie.title;
+      document.getElementById("moviePoster").src = movie.image;
+      document.getElementById("moviePoster").alt = movie.title;
+    } else {
+      document.getElementById("movieTitle").textContent = "Movie not found.";
+    }
+  </script>
+</body>
+</html>
